@@ -24,13 +24,13 @@ class MyComponent extends React.Component{
       placeholder = "Input text for analysis"
       type="text"
       style={{
-        borderRadius: '10px',
+        borderRadius: '20px',
         borderBlockColor: 'blue',
         borderInlineColor: 'blue',
         height: '100px',
         width: '500px',
         padding: '10px',
-        border: '1px solid gray'
+        border: '1px,'
       }}
       {...props}
     />
@@ -44,39 +44,6 @@ class MyComponent extends React.Component{
       inputValue: val
     });
   }
-}
-
-
-function RoundedTextBox(props) {
-  return (
-    <div style={{ overflowWrap: 'break-word', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      {/* <input
-        type="text"
-        style={{
-          borderRadius: '10px',
-          borderBlockColor: 'blue',
-          borderInlineColor: 'blue',
-          height: '100px',
-          width: '500px',
-          padding: '10px',
-          border: '1px solid gray',
-        }}
-        {...props}
-      /> */}
-
-      <MyComponent/>
-    </div>
-  );
-}
-
-function Test(props){
-  return (
-    <form action='/action_page.php'>
-      <textarea id="inputbox" rows='4' cols='50'>Input text here!</textarea>
-      <input type="submit" value="Submit"></input>
-
-    </form>
-  )
 }
 
 function NewTest(props) {
@@ -107,10 +74,12 @@ function NewTest(props) {
           borderRadius: '10px',
           borderBlockColor: 'blue',
           borderInlineColor: 'blue',
-          height: '100px',
+          height: '130px',
           width: '500px',
           padding: '10px',
-          border: '1px solid gray',
+          border: '1px ',
+          position: 'relative',
+          top: '-20px',
         }}
       />
       <button
@@ -120,13 +89,15 @@ function NewTest(props) {
       >
         ANALYZE
       </button>
-      <hr style={{ position: 'relative', top: '10px' }}></hr>
+      <hr style={{ position: 'relative', top: '40px', backgroundColor:'white'}}></hr>
       <p
         style={{
+          backgroundColor: '#d4e5ef',
           position: 'relative',
-          top: '10px',
+          top: '35px',
           textAlign: 'center',
           margin: '0 auto',
+          padding: '30px',
         }}
       >
         {para}
@@ -139,6 +110,8 @@ function Header({args}){
   const mystyle = {
     color: args.color,
     textAlign: "center",
+    alignItems: 'center', 
+    height: '10vh',
     fontSize: args.size
   };
   return(
@@ -148,49 +121,13 @@ function Header({args}){
   );
 }
 
-function HoverButton(props) {
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
-  const buttonStyle = {
-    backgroundColor: hovered ? props.hoverColor : props.color,
-    color: props.textColor,
-    border: 'none',
-    padding: '11px',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginTop: '10px'
-  };
-
-  const divstyle = { display: 'flex', justifyContent: 'center', alignItems: 'center' };
-
-  return (
-    <div style={divstyle}>
-    <button
-      style={buttonStyle}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      {props.children}
-    </button>
-    </div>
-  );
-}
-
 function App(){
   return (
-    <div>
-      <Header args={{text: "AI Text Detector",
-                     color: "green",
-                     size: "50px"}}/>
+    <div style={{ backgroundColor: '#d4e5ef' }}>
       <Header args={{text: "AuthenText",
+                     color: "#146192",
+                     size: "50px"}}/>
+      <Header args={{text: "AI Language Detector",
                      color: "black",
                      size: "20px"}}/>            
       <NewTest/>

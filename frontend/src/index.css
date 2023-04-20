@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #d4e5ef;
 }
 
 code {
@@ -16,7 +17,7 @@ code {
   display: block;
   margin: 0 auto;
   top:50%;
-  background-color:#7e7e7e;
+  background-color:#146192;
   color: rgb(255, 255, 255);
   border:none;
   border-radius:5px; 
@@ -26,5 +27,17 @@ code {
 }
 
 .button:hover{
-  background-color: #009600;
+  background-color: #19325f;
+}
+
+.hr{
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #146192;
+  margin: 0 auto;
+  padding: 0;
+  background-color:#146192;
+  color: #146192;
+  border-style: solid,
 }
